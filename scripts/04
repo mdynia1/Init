@@ -1,0 +1,22 @@
+0 0 * * * 
+TO_CHECK=/etc/crontab
+TO_SAVE=/etc/.crontab_backup
+
+if [ ! -e $TO_SAVE ]; then
+	echo "There is no backup saved!"
+	sudo cp $TO_CHECK $BACKUP
+	exit 0
+fi
+
+MD5=`md5sum $TO_CHECK | awk '{ print $1 }'`
+MD5_SAVED=`md5sum $TO_SAVE | awk '{ print $1 }'`
+
+if [ -z $MD5 ] | [ -z $MD5_SAVED ]; then
+	echo "MD5 is empty."
+fi
+
+if [ "$MD5" != "$MD5_SAVED" ]; then
+	echo "Crontab has been modified" | mail -s "Report" root
+fi
+
+sudo cp $TO_CHECK $TO_SAVE

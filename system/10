@@ -1,0 +1,4 @@
+sudo fdisk -l 
+			Linux
+diskutil list
+			Mac

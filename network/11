@@ -1,0 +1,5 @@
+traceroute slash16.org
+
+The first link is meant to be the link between local network and outside world.
+
+178.214.196.33 (178.214.196.33)  0.991 ms  0.578 ms  0.473 ms 

@@ -1,0 +1,2 @@
+kill -KILL PID
+to determine PID run jobs -l

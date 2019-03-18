@@ -1,0 +1,4 @@
+crontab -e
+# sudo touch /var/log/update_script.log
+# sudo chmod 776 /var/log/update_script.log
+0 4 * * 0 sudo apt-get -y update >> /var/log/update_script.log && sudo apt-get -y upgrade >> /var/log/update_script.log

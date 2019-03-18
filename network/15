@@ -1,0 +1,3 @@
+A new entry needs to be added to /etc/hosts file. 
+
+echo 'intra.42.fr 46.19.122.85' >> /etc/hosts
